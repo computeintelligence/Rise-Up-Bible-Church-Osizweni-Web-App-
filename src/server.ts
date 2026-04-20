@@ -134,7 +134,7 @@ app.post('/api/submit-ticket', upload.single('proofOfPayment'), async (req: Requ
 
     const mailOptions: any = {
       from: process.env.EMAIL_USER || 'rubcosizweni.office@gmail.com',
-      to: 'sbongambhele203@gmail.com',
+      to: 'rubcosizweni.office@gmail.com',
       subject: 'New Gala Dinner Ticket Registration',
       html: emailHTML,
     };

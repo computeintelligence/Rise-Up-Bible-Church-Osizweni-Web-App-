@@ -27,7 +27,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src="/logo.jpg" alt="Rise-Up Bible Church Logo" className="w-12 h-12 rounded-lg shadow-sm border border-border/50 group-hover:scale-105 transition-transform duration-300" />
+            <img src="/logo.jpg" alt="Rise-Up Bible Church Logo" className="w-12 h-12 rounded-lg shadow-sm border border-border/50 group-hover:scale-105 transition-transform duration-300 object-contain" />
             <div className="flex flex-col">
               <span className="font-display font-bold text-xl leading-none text-secondary">Rise-Up</span>
               <span className="font-sans text-xs tracking-widest text-primary font-medium">BIBLE CHURCH</span>
