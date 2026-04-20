@@ -3,8 +3,14 @@ import multer from 'multer';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 import { Pool } from 'pg';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 
 dotenv.config({ path: '.env.local' });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = Number(process.env.PORT) || 3001;
@@ -120,6 +126,15 @@ app.get('/api/health', (req: Request, res: Response) => {
   res.json({ status: 'ok' });
 });
 
-app.listen(port, 'localhost', () => {
+// Serve built frontend in production (when dist/ exists)
+const distPath = path.resolve(__dirname, '..', 'dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get(/^(?!\/api).*/, (req: Request, res: Response) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on port ${port}`);
 });
