@@ -37,7 +37,15 @@ externalPort = 3001
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 5001
+externalPort = 3000
+
 [deployment]
 deploymentTarget = "autoscale"
 run = ["bash", "-c", "npm run server"]
 build = ["npm", "run", "build"]
+
+[userenv]
+
+[userenv.shared]
