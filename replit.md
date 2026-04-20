@@ -9,7 +9,8 @@ A full-stack web application for a church/religious organization. Features inclu
 ## Tech Stack
 - **Frontend:** React 19, TypeScript, Tailwind CSS 4, React Router DOM v7, Motion (animations), Lucide React
 - **Backend:** Node.js, Express, Multer (file uploads), Nodemailer (email)
-- **Database/Storage:** Supabase (tickets table + file storage bucket)
+- **Database:** Replit PostgreSQL (`tickets` table via `pg` package)
+- **File handling:** Multer in-memory storage; proof-of-payment attached directly to email
 - **Build Tool:** Vite 6
 - **Package Manager:** npm
 
@@ -34,15 +35,13 @@ public/           # Static assets (images, logo)
 - `npm run build` — production build
 
 ## Environment Variables Required
-- `SUPABASE_URL` — Supabase project URL
-- `SUPABASE_SERVICE_ROLE_KEY` — Supabase service role key
-- `SUPABASE_BUCKET` — Storage bucket name (default: `ticket-uploads`)
-- `EMAIL_USER` — Gmail address for sending notifications
-- `EMAIL_PASSWORD` — Gmail app password
+- `DATABASE_URL` — Replit PostgreSQL connection string (auto-set by Replit)
+- `EMAIL_USER` — Gmail address used to authenticate with Gmail SMTP
+- `EMAIL_PASSWORD` — Gmail app password (generate at Google Account > Security > App Passwords)
 - `GEMINI_API_KEY` — Google Gemini AI key (used in frontend)
 
 ## Key Flows
-1. **Ticket Submission:** Form → POST /api/submit-ticket → Upload to Supabase Storage → Insert into `tickets` table → Send email via Gmail
+1. **Ticket Submission:** Form → POST /api/submit-ticket → Insert record into Replit PostgreSQL `tickets` table → Send email to rubcosizweni.office@gmail.com with proof-of-payment attached from memory buffer
 2. **Blog:** Static content from `src/data.ts`
 
 ## Deployment
