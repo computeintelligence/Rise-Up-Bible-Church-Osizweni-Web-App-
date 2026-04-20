@@ -13,11 +13,12 @@ const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 const supabaseBucket = process.env.SUPABASE_BUCKET || 'ticket-uploads';
 
 if (!supabaseUrl || !supabaseServiceRoleKey) {
-  console.error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in environment variables.');
-  process.exit(1);
+  console.warn('Warning: Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY. Ticket submission will not work until these are configured.');
 }
 
-const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
+const supabase = supabaseUrl && supabaseServiceRoleKey
+  ? createClient(supabaseUrl, supabaseServiceRoleKey)
+  : null as any;
 
 // CORS Middleware
 app.use((req: Request, res: Response, next) => {
