@@ -27,7 +27,7 @@ export default function Events() {
       time: "09:00 AM - 12:00 PM",
       location: "Main Sanctuary",
       description: "Join us for a powerful time of worship, prayer, and an inspiring message from the Word of God.",
-      image: null as string | null,
+      image: null,
       placeholderIcon: "🙏"
     },
     {
@@ -37,7 +37,7 @@ export default function Events() {
       time: "18:00 PM - 19:30 PM",
       location: "Fellowship Hall",
       description: "Dive deeper into the Scriptures with our interactive Bible study sessions. Perfect for spiritual growth.",
-      image: null as string | null,
+      image: null,
       placeholderIcon: "📖"
     },
     {
@@ -47,7 +47,7 @@ export default function Events() {
       time: "17:30 PM - 19:00 PM",
       location: "Youth Center",
       description: "A dynamic space for young people to connect, worship, and learn about God's purpose for their lives.",
-      image: null as string | null,
+      image: null,
       placeholderIcon: "✨"
     }
   ];
@@ -61,7 +61,7 @@ export default function Events() {
       location: "Kwanobuhle Hall",
       fullLocation: "Kwanobuhle Hall, Next to Idonsa High, Osizweni",
       description: "An unforgettable evening of celebration, fellowship, and fine dining with the Rise-Up Bible Church community. Join us for a night of elegance and togetherness.",
-      image: "/images/gala-dinner-poster.jpg" as string | null,
+      image: "/images/gala-dinner-poster.jpg",
       placeholderIcon: "🍽️",
       hasTickets: true,
       ticketTypes: [
@@ -77,7 +77,7 @@ export default function Events() {
       time: "TBA",
       location: "Main Sanctuary",
       description: "Join us for a three-day celebration marking 10 years of God's faithfulness and blessings at Rise-Up Bible Church. Expect powerful messages, prayer sessions, and community fellowship.",
-      image: null as string | null,
+      image: null,
       placeholderIcon: "🎉",
       hasTickets: false
     }
