@@ -13,16 +13,12 @@ export default function About() {
 
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <img alt="Church worship" className="rounded-3xl shadow-2xl w-full h-[500px] object-cover" src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2940&auto=format&fit=crop" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+              <div className="bg-secondary rounded-3xl p-10 flex flex-col justify-center min-h-[320px]">
+                <p className="text-primary font-bold tracking-widest uppercase text-sm mb-6">Our Vision</p>
+                <p className="text-3xl font-display font-extrabold text-white leading-tight">"Raising the Lord's Army for the End-Time Harvest"</p>
               </div>
-              <div className="space-y-10">
-                <div>
-                  <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Our Vision</h2>
-                  <p className="text-3xl font-display font-bold text-secondary leading-tight">"Raising the Lord's Army for the End-Time Harvest"</p>
-                </div>
-                <div className="h-px w-full bg-border"></div>
+              <div className="flex flex-col justify-center space-y-8">
                 <div>
                   <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Our Mission</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">Connecting and equipping believers for the effective work of ministry through preaching, teaching, and small group discipleship so that together we reach the unsaved with good news.</p>

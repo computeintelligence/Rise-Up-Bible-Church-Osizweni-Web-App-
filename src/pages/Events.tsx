@@ -27,7 +27,8 @@ export default function Events() {
       time: "09:00 AM - 12:00 PM",
       location: "Main Sanctuary",
       description: "Join us for a powerful time of worship, prayer, and an inspiring message from the Word of God.",
-      image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=2946&auto=format&fit=crop"
+      image: null as string | null,
+      placeholderIcon: "🙏"
     },
     {
       id: 2,
@@ -36,7 +37,8 @@ export default function Events() {
       time: "18:00 PM - 19:30 PM",
       location: "Fellowship Hall",
       description: "Dive deeper into the Scriptures with our interactive Bible study sessions. Perfect for spiritual growth.",
-      image: "https://pixabay.com/get/ge82176f9f29822a137fc2e355f5fc64b78ee8a67e341d11a08265e0cb75c6dc8a5c0dcdf6c0987b92555a743ff459118bdca307186f69d293f3819c28033e71d_1280.jpg"
+      image: null as string | null,
+      placeholderIcon: "📖"
     },
     {
       id: 3,
@@ -45,7 +47,8 @@ export default function Events() {
       time: "17:30 PM - 19:00 PM",
       location: "Youth Center",
       description: "A dynamic space for young people to connect, worship, and learn about God's purpose for their lives.",
-      image: "https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2940&auto=format&fit=crop"
+      image: null as string | null,
+      placeholderIcon: "✨"
     }
   ];
 
@@ -58,7 +61,8 @@ export default function Events() {
       location: "Kwanobuhle Hall",
       fullLocation: "Kwanobuhle Hall, Next to Idonsa High, Osizweni",
       description: "An unforgettable evening of celebration, fellowship, and fine dining with the Rise-Up Bible Church community. Join us for a night of elegance and togetherness.",
-      image: "https://images.unsplash.com/photo-1519671482677-e6837fdc8c7c?q=80&w=2940&auto=format&fit=crop",
+      image: "/images/gala-dinner-poster.jpg" as string | null,
+      placeholderIcon: "🍽️",
       hasTickets: true,
       ticketTypes: [
         { name: "VVIP", price: 400 },
@@ -73,7 +77,8 @@ export default function Events() {
       time: "TBA",
       location: "Main Sanctuary",
       description: "Join us for a three-day celebration marking 10 years of God's faithfulness and blessings at Rise-Up Bible Church. Expect powerful messages, prayer sessions, and community fellowship.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop",
+      image: null as string | null,
+      placeholderIcon: "🎉",
       hasTickets: false
     }
   ];
@@ -137,8 +142,17 @@ export default function Events() {
               {upcomingEvents.map((event) => (
                 <div key={event.id} className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
                   <div className="relative h-64 overflow-hidden">
-                    <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent z-10 transition-colors duration-300"></div>
-                    <img alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={event.image} />
+                    {event.image ? (
+                      <>
+                        <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent z-10 transition-colors duration-300"></div>
+                        <img alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={event.image} />
+                      </>
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-secondary to-secondary/80 flex flex-col items-center justify-center gap-3">
+                        <span className="text-5xl">{event.placeholderIcon}</span>
+                        <span className="text-white font-display font-bold text-lg text-center px-4">{event.title}</span>
+                      </div>
+                    )}
                     {event.hasTickets && (
                       <div className="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                         Get Tickets
@@ -209,8 +223,17 @@ export default function Events() {
               {regularEvents.map((event) => (
                 <div key={event.id} className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
                   <div className="relative h-64 overflow-hidden">
-                    <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent z-10 transition-colors duration-300"></div>
-                    <img alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={event.image} />
+                    {event.image ? (
+                      <>
+                        <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent z-10 transition-colors duration-300"></div>
+                        <img alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={event.image} />
+                      </>
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-secondary to-secondary/80 flex flex-col items-center justify-center gap-3">
+                        <span className="text-5xl">{event.placeholderIcon}</span>
+                        <span className="text-white font-display font-bold text-lg text-center px-4">{event.title}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-8 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold font-display text-secondary mb-4 group-hover:text-primary transition-colors">{event.title}</h3>
