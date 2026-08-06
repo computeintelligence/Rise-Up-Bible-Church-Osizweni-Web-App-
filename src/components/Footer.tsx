@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="bg-white p-1 rounded-lg">
                 <img src="/logo.jpg" alt="Rise-Up Bible Church Logo" className="w-10 h-10 rounded object-cover" />
               </div>
-              <h3 className="font-display text-2xl font-bold text-white">Rise-Up</h3>
+              <h3 className="font-display text-2xl font-bold text-white">Rise-Up Bible Church</h3>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Raising the Lord's Army for the End-Time Harvest. Connecting and equipping believers for the effective work of ministry.
