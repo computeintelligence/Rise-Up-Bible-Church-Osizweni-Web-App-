@@ -6,7 +6,8 @@ export const blogPosts = [
     author: "Pastor T. Nkosi",
     date: "March 8, 2026",
     readTime: "8 min read",
-    image: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=756,fit=crop,f=jpeg/YX4x0rj3WLFkzV0X/yellow-red-and-blue-modern-sunday-service-instagram-post-2-Qs4fIRObGtYOrRRi.jpg",
+    category: "Family",
+    image: "/images/pastor-nkosi.jpg",
     content: `
       <p class="lead text-2xl text-secondary font-medium mb-10">Families are the foundational building blocks of both society and the Church. In the previous discussion, we established an important biblical principle: God influences communities through families.</p>
       <p>The condition of a community often reflects the condition of its families. When families are strong, communities flourish. When families are broken, disoriented, or divided, communities often experience instability, conflict, and social challenges.</p>
@@ -51,7 +52,8 @@ export const blogPosts = [
     author: "Pastor T. Nkosi",
     date: "March 1, 2026",
     readTime: "6 min read",
-    image: "https://assets.zyrosite.com/YX4x0rj3WLFkzV0X/yellow-red-and-blue-modern-sunday-service-instagram-post-ECMn8fI5PCiqvUCl.gif",
+    category: "Discipleship",
+    image: "/images/dr-joel-motlafi.jpg",
     content: `
       <p class="lead text-2xl text-secondary font-medium mb-10">The family is God's original institution, created before the church, before government, and before any other social structure. It is the foundation upon which all of society is built.</p>
       <p>When God wanted to shape the world, He didn't start with an army or a political system; He started with a family. The strength of a nation is directly tied to the strength of its families.</p>
@@ -67,7 +69,8 @@ export const blogPosts = [
     author: "Pastor T. Nkosi",
     date: "February 22, 2026",
     readTime: "5 min read",
-    image: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=756,fit=crop,f=jpeg/YX4x0rj3WLFkzV0X/black-and-orange-modern-church-presentation-2-Ba0CO9yxhIczhfG9.jpg",
+    category: "Teaching",
+    image: "/images/pastor-nkosi.jpg",
     content: `
       <p class="lead text-2xl text-secondary font-medium mb-10">Many believers struggle with understanding the will of God for their lives. They often view it as a hidden mystery that must be deciphered.</p>
       <p>However, God's will is not meant to be a secret. He desires for His children to know and walk in His will even more than they desire to find it.</p>

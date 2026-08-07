@@ -9,16 +9,15 @@ export default function Home() {
     <main className="flex-grow pt-20">
       <div className="w-full">
         {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0 bg-gradient-to-br from-secondary via-secondary/95 to-secondary/80">
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40"></div>
-          </div>
+        <section className="relative isolate min-h-[90vh] flex items-center justify-center overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80"
+            alt="Church building at Rise-Up Bible Church"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 z-0 bg-gradient-to-br from-secondary via-secondary/95 to-secondary/70"></div>
+          <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_top_left,rgba(238,73,2,0.28),transparent_45%)]"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center md:text-left pt-20">
-            <div>
-              <span className="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/30 text-primary font-medium text-sm tracking-wider uppercase mb-6 backdrop-blur-sm">
-                Welcome to Rise-Up Bible Church
-              </span>
-            </div>
             <div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold text-white mb-6 leading-tight max-w-4xl">
                 RAISING THE LORD'S <span className="text-primary">ARMY</span> FOR THE END-TIME HARVEST
@@ -86,28 +85,33 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {latestPosts.map((post) => (
-                <div key={post.id}>
-                  <Link to={`/blog/${post.id}`} className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+                <div key={post.id} className="h-full">
+                  <Link to={`/blog/${post.id}`} className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-border/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/20">
                     <div className="relative h-64 overflow-hidden">
-                      <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent z-10 transition-colors duration-300"></div>
-                      <img alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={post.image} />
+                      <img alt={post.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src={post.image} />
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/85 via-secondary/10 to-transparent"></div>
+                      <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-secondary backdrop-blur">
+                        {post.category}
+                      </span>
                     </div>
-                    <div className="p-8 flex flex-col flex-grow">
-                      <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground mb-4">
+                    <div className="flex flex-1 flex-col p-7">
+                      <div className="mb-4 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                         <span className="flex items-center gap-1.5">
                           <User size={14} className="text-primary" />
                           {post.author}
                         </span>
-                        <span className="w-1 h-1 rounded-full bg-border"></span>
                         <span className="flex items-center gap-1.5">
                           <Clock size={14} className="text-primary" />
                           {post.date} • {post.readTime}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors">{post.title}</h3>
+                      <h3 className="text-2xl font-bold font-display text-secondary mb-3 transition-colors group-hover:text-primary">{post.title}</h3>
                       <p className="text-muted-foreground mb-6 line-clamp-2">{post.subtitle}</p>
-                      <div className="mt-auto pt-6 flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                        Read Article <ArrowRight size={18} className="ml-1" />
+                      <div className="mt-auto flex items-center justify-between pt-4">
+                        <span className="text-sm font-semibold text-primary">Read article</span>
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                          <ArrowRight size={18} />
+                        </span>
                       </div>
                     </div>
                   </Link>
