@@ -2,16 +2,13 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Rise-Up Bible Church Web App
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/556544e6-756e-4cf6-b8fe-428525936f28
+This project powers the online presence for Rise-Up Bible Church, including the homepage, about page, events, and blog content.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
    `npm install`

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://divine-presence.replit.app/sitemap.xml
